@@ -29,9 +29,3 @@ Este projeto foi desenvolvido utilizando:
 
 Este projeto tem como objetivo auxiliar usuários a terem maior controle sobre suas finanças, tendo organização e consciência financeira.
 
-
-## 👨‍💻 Autor
-
-Feito com 💙 por *Seu Nome*
-
----
