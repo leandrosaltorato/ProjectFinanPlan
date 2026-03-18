@@ -1,6 +1,6 @@
 # FinanPlan
 
-Site eficiente para ajudar no controle financeiro pessoal, permitindo registrar, visualizar e analisar seus gastos de forma prática.
+Site eficiente para ajudar no controle financeiro pessoal, permitindo registrar, visualizar e analisar seus gastos de forma prática
 
 ---
 
@@ -27,5 +27,5 @@ Este projeto foi desenvolvido utilizando:
 
 ##  Objetivo
 
-Este projeto tem como objetivo auxiliar usuários a terem maior controle sobre suas finanças, tendo organização e consciência financeira.
+Este projeto tem como objetivo auxiliar usuários a terem maior controle sobre suas finanças, tendo organização e consciência financeira
 
