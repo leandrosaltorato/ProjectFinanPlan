@@ -1,0 +1,128 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+}
+
+model Usuarios {
+  id        Int                 @id @default(autoincrement())
+  nome      String
+  senha     String
+  email     String
+  Telefone  String
+  controles UsuariosControles[]
+  lembretes Lembretes[]
+}
+
+model Administradores {
+  id       Int    @id @default(autoincrement())
+  nome     String
+  senha    String
+  email    String
+  cargo    CARGOS
+  telefone String
+}
+
+enum CARGOS {
+  ADMIN
+}
+
+model Controle {
+  id         Int                 @id @default(autoincrement())
+  usuarios   UsuariosControles[]
+  saldo      Float
+  transacoes Transacoes[]
+  previsoes  PrevisaoSaldo[]
+  lembretes  Lembretes[]
+}
+
+model UsuariosControles {
+  id         Int      @id @default(autoincrement())
+  usuarios   Usuarios @relation(fields: [usuariosId], references: [id])
+  usuariosId Int
+  controle   Controle @relation(fields: [controleId], references: [id])
+  controleId Int
+}
+
+model Transacoes {
+  id        Int        @id @default(autoincrement())
+  data      DateTime
+  valor     Float
+  tipo      TRANSACOES
+  descricao String
+
+  controle   Controle @relation(fields: [controleId], references: [id])
+  controleId Int
+
+  categoria     Categoria @relation(fields: [categoriaId], references: [id])
+  categoriaId   Int
+  autoCategoria Boolean   @default(true)
+}
+
+enum TRANSACOES {
+  ENTRADA
+  SAIDA
+}
+
+model Categoria {
+  id         Int            @id @default(autoincrement())
+  nome       String
+  tipo       TIPO_CATEGORIA
+  cor        String
+  transacoes Transacoes[]
+}
+
+enum TIPO_CATEGORIA {
+  ALIMENTACAO
+  LAZER
+  EDUCACAO
+  TRANSPORTE
+  SAUDE
+  OUTROS
+}
+
+model PrevisaoSaldo {
+  id          Int             @id @default(autoincrement())
+  dataCalculo DateTime
+  saldo       Float
+  status      STATUS_PREVISAO
+
+  controle   Controle @relation(fields: [controleId], references: [id])
+  controleId Int
+}
+
+enum STATUS_PREVISAO {
+  POSITIVO
+  NEGATIVO
+}
+
+model Lembretes {
+  id        Int      @id @default(autoincrement())
+  titulo    String
+  mensagem  String
+  dataEnvio DateTime
+  visto     Boolean  @default(false)
+
+  tipo   TIPO_LEMBRETE
+  status STATUS_LEMBRETE @default(PENDENTE)
+
+  usuario   Usuarios @relation(fields: [usuarioId], references: [id])
+  usuarioId Int
+
+  controle   Controle @relation(fields: [controleId], references: [id])
+  controleId Int
+}
+
+enum TIPO_LEMBRETE {
+  CONTA
+  META
+  INTERACAO
+}
+
+enum STATUS_LEMBRETE {
+  PENDENTE
+  ENVIADO
+  CANCELADO
+}
