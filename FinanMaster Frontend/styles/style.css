@@ -25,7 +25,6 @@
     --border-radius-2: 6px;
 }
 
-/* RESET */
 
 * {
     margin: 0;
@@ -49,7 +48,6 @@ body {
     color: var(--color-dark);
 }
 
-/* ICON BUTTON */
 
 .icon-button {
     background: none;
@@ -128,7 +126,7 @@ small {
     color: var(--color-purple);
 }
 
-/* BACKGROUNDS */
+
 
 .bg-primary {
     background: var(--color-primary);
@@ -155,7 +153,8 @@ small {
     box-shadow: 0 0.8rem 0.8rem rgba(0, 0, 0, 0.2);
 }
 
-/* NAVBAR */
+
+
 
 nav {
     width: 100%;
@@ -248,7 +247,9 @@ nav .profile-area button {
     display: none;
 }
 
-/* MAIN LAYOUT */
+
+
+
 
 main {
     display: grid;
@@ -258,7 +259,9 @@ main {
     margin: 1rem auto 4rem;
 }
 
-/* SIDEBAR */
+
+
+
 
 main aside {
     display: flex;
@@ -311,7 +314,10 @@ main aside .sidebar h4 {
     font-weight: 500;
 }
 
-/* DASHBOARD CARDS */
+
+
+
+
 
 .cards {
     display: flex;
@@ -350,9 +356,13 @@ main aside .sidebar h4 {
     color: #ef4444;
 }
 
-/* transações */
 
-/* CARD GRANDE */
+
+
+
+
+
+
 
 .card-transacoes {
     background: white;
@@ -371,7 +381,9 @@ main aside .sidebar h4 {
     margin-bottom: 1rem;
 }
 
-/* LISTA */
+
+
+
 
 .lista-transacoes {
     display: flex;
@@ -379,7 +391,10 @@ main aside .sidebar h4 {
     gap: 0.8rem;
 }
 
-/* ITEM */
+
+
+
+
 
 .item-transacao {
     display: flex;
@@ -398,7 +413,9 @@ main aside .sidebar h4 {
     background: #067a80;
 }
 
-/* ESQUERDA */
+
+
+
 
 .lado-esquerdo {
     display: flex;
@@ -406,7 +423,9 @@ main aside .sidebar h4 {
     gap: 1rem;
 }
 
-/* ICONES */
+
+
+
 
 .icone {
     display: flex;
@@ -429,7 +448,9 @@ main aside .sidebar h4 {
     color: var(--color-danger);
 }
 
-/* TEXTO */
+
+
+
 
 .info h4 {
     margin: 0;
@@ -442,7 +463,10 @@ main aside .sidebar h4 {
     font-size: 0.75rem;
 }
 
-/* VALOR */
+
+
+
+
 
 .valor {
     font-weight: 600;
@@ -464,19 +488,65 @@ main aside .sidebar h4 {
     align-items: center;
 }
 
-.add {
-    background: var(--color-secundary);
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 16px;
-    position: relative;
-    transition: all 0.3s ease;
+
+.button {
+  height: 40px;
+  width: 120px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
 }
 
-.add:hover {
-    transform: translateY(-2px);
+.button:hover {
+  box-shadow: .5px .5px 120px #252525;
 }
+
+.type1::after {
+  content: "Clique aqui";
+  height: 40px;
+  width: 120px;
+  background-color: #008080;
+  color: #fff;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  transform: translateY(40px);
+  font-size: 1.2rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s ease-in-out;
+}
+
+.type1::before {
+  content: "Novo";
+  height: 40px;
+  width: 120px;
+  background-color: #fff;
+  color: #008080;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  transform: translateY(0px) scale(1.2);
+  font-size: 1.2rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s ease-in-out;
+}
+
+.type1:hover::after {
+  transform: translateY(0) scale(1.2);
+}
+
+.type1:hover::before {
+  transform: translateY(-30px) scale(0) rotate(120deg);
+}
+
+
 
