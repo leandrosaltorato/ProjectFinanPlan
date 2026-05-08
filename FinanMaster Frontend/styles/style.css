@@ -260,8 +260,17 @@ main {
 }
 
 
+.span-ia{
+    background: #10b981;
+    color: white;
+    font-size: 0.6rem;
+    font-weight:500;
 
+    padding: 4px 8px;
+    border-radius: 6px;
 
+    margin-left: auto;
+}
 
 main aside {
     display: flex;
@@ -281,6 +290,7 @@ main aside .sidebar a {
     height: 4.2rem;
     color: var(--color-gray-light);
     position: relative;
+    white-space: nowrap;
 }
 
 main aside .sidebar a span {
@@ -355,8 +365,6 @@ main aside .sidebar h4 {
 .negativo {
     color: #ef4444;
 }
-
-
 
 
 
@@ -459,7 +467,7 @@ main aside .sidebar h4 {
 }
 
 .info small {
-    color: #000000;
+    color: #ffffff;
     font-size: 0.75rem;
 }
 
