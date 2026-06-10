@@ -19,7 +19,6 @@ Site eficiente para ajudar no controle financeiro pessoal, permitindo registrar,
 Este projeto foi desenvolvido utilizando:
 
 * [ ] Linguagem: HTML, CSS, Javascript
-* [ ] Framework: Chart.js
 * [ ] Banco de Dados: MySql
 
 ---
