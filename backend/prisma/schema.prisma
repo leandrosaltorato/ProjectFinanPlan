@@ -88,6 +88,7 @@ model PrevisaoSaldo {
   dataCalculo DateTime
   saldo       Float
   status      STATUS_PREVISAO
+  planoIA Json?
 
   controle   Controle @relation(fields: [controleId], references: [id])
   controleId Int
